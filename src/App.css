@@ -1,38 +1,112 @@
-.App {
+.main_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+}
+.popupOn {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+}
+.start-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #111;
+}
+.img_wrapper > img {
+  max-width: 180px;
+  width: 100%;
+}
+.grid_box {
+  max-width: 1240px;
+  margin: 10px auto;
+}
+.youtube_link {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.youtube_link > a > button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.youtube_link > a > button:hover {
+  background-color: #111;
+  color: #fff;
+  border: 2px solid #ff0000;
+  cursor: pointer;
+}
+.img_wrapper {
+  text-align: center;
+}
+.start_time {
+  text-align: center;
+  color: #666;
+}
+a {
+  text-decoration: none;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pop_inner {
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pop_name {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+.pop_image {
+  text-align: center;
+}
+.back_btn_wrapper {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 35px;
+}
+.none {
+  display: none;
+}
+.backBtn {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgb(240, 141, 141);
+  color: #fff;
 }
-
-.App-link {
-  color: #61dafb;
+.search_wrapper {
+  margin: 40px auto;
+  text-align: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search_wrapper > input {
+  padding: 10px;
+  max-width: 280px;
+  width: 100%;
 }
