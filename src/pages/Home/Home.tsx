@@ -1,8 +1,9 @@
 import React, { FC } from "react";
 import { IResponse } from "../../types";
 import StartItem from '../../components/StartItem/StartItem'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Popup from "../../components/Popup/Popup";
+
 
 interface IHome {
     active?: boolean;
@@ -17,6 +18,11 @@ const Home: FC<IHome> = ({ isLoading, response, active, togglePop }) => {
         setSearchValue(e.currentTarget.value);
         console.log('text', searchValue)
     };
+    const navigate = useNavigate();
+    const closePopup = () => {
+        togglePop()
+        navigate(-1)
+    }
 
     return (
         <div className="grid_box">
@@ -48,7 +54,13 @@ const Home: FC<IHome> = ({ isLoading, response, active, togglePop }) => {
                     }
                 </div>
             }
-            {active && <Popup active={active} togglePop={togglePop} />}
+            {active &&
+                <div className="overlay">
+                    <div className='back_btn_wrapper'>
+                        <button className='backBtn' onClick={closePopup}>X</button>
+                    </div>
+                    <Popup active={active} />
+                </div>}
         </div>
     )
 }
